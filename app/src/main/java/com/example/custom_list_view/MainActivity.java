@@ -1,11 +1,14 @@
 package com.example.custom_list_view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.View;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +17,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.example.custom_list_view.R.id.layout_view;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         repository_recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
         getRepositoryResponse();
+
     }
 
     private void getRepositoryResponse() {
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 repoModels=new ArrayList<>(response.body());
                 repoAdapter=new Adapter(MainActivity.this,repoModels);
                 repository_recyclerview.setAdapter(repoAdapter);
+
                 Toast.makeText(MainActivity.this,"Success",Toast.LENGTH_SHORT).show();
             }
 
