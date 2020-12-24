@@ -8,12 +8,19 @@ public class Owner {
     @SerializedName("login")
     @Expose
     private String login;
+    private String repo;
 
     public String getLogin() {
         return login;
     }
+    public String getRepo() {
+        return repo;
+    }
 
     public void setLogin(String login) {
         this.login = login;
+    }
+    public void setRepo(String repo) {
+        this.repo = repo;
     }
 }

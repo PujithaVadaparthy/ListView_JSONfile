@@ -31,6 +31,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public void onBindViewHolder(@NonNull Adapter.ViewHolder viewHolder, int i) {
     viewHolder.repo_name.setText(repository_list.get(i).getName());
     viewHolder.owner_name.setText(repository_list.get(i).getOwner().getLogin());
+
     }
 
     @Override

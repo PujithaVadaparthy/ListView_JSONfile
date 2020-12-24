@@ -13,6 +13,10 @@ public class Repository_List {
     @Expose
     private String login;
 
+    @SerializedName("starred_url")
+    @Expose
+    private String repo;
+
     @SerializedName("full_name")
     @Expose
     private String full_name;
@@ -52,5 +56,14 @@ public class Repository_List {
     public void setLogin(String login) {
         this.login = login;
     }
+
+    public String getRepo() {
+        return repo;
+    }
+
+    public void setRepo(String repo) {
+        this.repo = repo;
+    }
+
 
 }
